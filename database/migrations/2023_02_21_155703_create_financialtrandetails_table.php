@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('financialtrandetails', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('financialTranId');
+            $table->unsignedBigInteger('module_id');
+            $table->double('amount');
+            $table->unsignedBigInteger('head_id');
+            $table->string('crdr', 10);
+            $table->unsignedBigInteger('brid');
+            $table->string('head_name');
+
             $table->timestamps();
         });
     }

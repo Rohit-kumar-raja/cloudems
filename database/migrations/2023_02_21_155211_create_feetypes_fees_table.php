@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('feetypes_fees', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('fee_category');
+            $table->string('f_name');
+            $table->unsignedBigInteger('fee_collection_id');
+            $table->unsignedBigInteger('br_id');
+            $table->integer('seq_id');
+            $table->string('fee_type_ledger');
+            $table->string('fee_headtype');
+         
             $table->timestamps();
         });
     }

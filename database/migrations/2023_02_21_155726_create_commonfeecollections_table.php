@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('commonfeecollections', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('module_id');
+            $table->unsignedBigInteger('trans_id');
+            $table->string('admno');
+            $table->string('rollno');
+            $table->double('amount');
+            $table->unsignedBigInteger('br_id');
+            $table->string('acadamic_year');
+            $table->string('financial_year');
+            $table->string('display_receipt_no');
+            $table->string('entry_mode');
+            $table->date('paid_date');
+            $table->boolean('inactive');
             $table->timestamps();
         });
     }

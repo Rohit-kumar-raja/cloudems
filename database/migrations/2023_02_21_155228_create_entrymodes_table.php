@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('entrymodes', function (Blueprint $table) {
             $table->id();
+            $table->string('Entry_modename');
+            $table->string('crdr', 10);
+            $table->integer('entrymodeno');
             $table->timestamps();
         });
     }

@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('financialtrans', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('moduleid');
+            $table->unsignedBigInteger('tranid');
+            $table->double('amount');
+            $table->string('crdr', 10);
+            $table->string('acadYear');
+            $table->integer('entry_mode');
+            $table->integer('voucherno');
+            $table->unsignedBigInteger('brid');
+            $table->integer('type_of_concession');
             $table->timestamps();
         });
     }

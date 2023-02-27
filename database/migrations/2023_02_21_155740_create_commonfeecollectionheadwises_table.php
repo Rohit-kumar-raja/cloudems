@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('commonfeecollectionheadwises', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('module_id');
+            $table->unsignedBigInteger('receipt_id');
+            $table->unsignedBigInteger('head_id');
+            $table->string('head_name');
+            $table->unsignedBigInteger('brid');
+            $table->double('amount');
             $table->timestamps();
         });
     }

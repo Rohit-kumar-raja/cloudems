@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('feecollectiontypes', function (Blueprint $table) {
             $table->id();
+            $table->string('collectionhead');
+            $table->string('collectiondesc');
+            $table->unsignedBigInteger('br_id');
+            $table->foreign('br_id')->references('br_id')->on('branches_faculties');
             $table->timestamps();
         });
     }
