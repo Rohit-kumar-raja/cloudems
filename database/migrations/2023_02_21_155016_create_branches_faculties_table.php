@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('branches_faculties', function (Blueprint $table) {
             $table->id();
-            $table->string('branch_name');
+            $table->string('branch_name')->unique();
             $table->timestamps();
         });
     }

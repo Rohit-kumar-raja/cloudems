@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('financialtrans', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('module_id');
+            $table->unsignedBigInteger('module_id')->nullable();
             $table->bigInteger('tranid');
-            $table->bigInteger('admno');
+            $table->string('admno');
             $table->double('amount');
             $table->string('crdr', 10);
             $table->date('tran_date');
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->timestamps();
             $table->foreign('br_id')->references('id')->on('branches_faculties');
             $table->foreign('module_id')->references('id')->on('modules');
+            $table->unique(['admno']);
         });
     }
 

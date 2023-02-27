@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('feecollectiontypes', function (Blueprint $table) {
             $table->id();
-            $table->string('collectionhead');
+            $table->string('collectionhead')->unique();
             $table->string('collectiondesc');
             $table->unsignedBigInteger('br_id');
             $table->foreign('br_id')->references('id')->on('branches_faculties');

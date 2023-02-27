@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('feecategory_feecategories', function (Blueprint $table) {
             $table->id();
             $table->string('fee_category');
+            $table->string('description');
             $table->unsignedBigInteger('br_id');
             $table->foreign('br_id')->references('id')->on('branches_faculties');
+            $table->unique(['fee_category', 'br_id']);
             $table->timestamps();
         });
     }

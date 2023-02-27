@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('commonfeecollections', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('module_id');
+            $table->unsignedBigInteger('module_id')->nullable();
             $table->bigInteger('trans_id');
             $table->string('admno');
             $table->string('rollno');

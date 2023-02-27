@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('commonfeecollectionheadwises', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('module_id');
+            $table->unsignedBigInteger('module_id')->nullable();
             $table->bigInteger('receipt_id');
             $table->unsignedBigInteger('head_id');
             $table->string('head_name');

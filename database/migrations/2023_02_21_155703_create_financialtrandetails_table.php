@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('financialtrandetails', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('financialTranId');
-            $table->unsignedBigInteger('module_id');
+            $table->unsignedBigInteger('module_id')->nullable();
             $table->double('amount');
             $table->unsignedBigInteger('head_id');
             $table->string('crdr', 10);

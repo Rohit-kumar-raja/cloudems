@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('full_tables_data', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
+            $table->string('date');
             $table->string('academic_year');
             $table->string('session');
             $table->string('alloted_category');
