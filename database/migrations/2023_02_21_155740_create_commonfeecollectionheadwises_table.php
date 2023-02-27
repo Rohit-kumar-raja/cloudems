@@ -14,12 +14,16 @@ return new class extends Migration
         Schema::create('commonfeecollectionheadwises', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('module_id');
-            $table->unsignedBigInteger('receipt_id');
+            $table->bigInteger('receipt_id');
             $table->unsignedBigInteger('head_id');
             $table->string('head_name');
-            $table->unsignedBigInteger('brid');
+            $table->unsignedBigInteger('br_id');
             $table->double('amount');
             $table->timestamps();
+            $table->foreign('br_id')->references('id')->on('branches_faculties');
+            $table->foreign('module_id')->references('id')->on('modules');
+            $table->foreign('head_id')->references('id')->on('feetypes_fees');
+
         });
     }
 

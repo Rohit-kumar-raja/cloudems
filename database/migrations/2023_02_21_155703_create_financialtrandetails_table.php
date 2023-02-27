@@ -18,10 +18,13 @@ return new class extends Migration
             $table->double('amount');
             $table->unsignedBigInteger('head_id');
             $table->string('crdr', 10);
-            $table->unsignedBigInteger('brid');
+            $table->unsignedBigInteger('br_id');
             $table->string('head_name');
-
             $table->timestamps();
+            $table->foreign('br_id')->references('id')->on('branches_faculties');
+            $table->foreign('module_id')->references('id')->on('modules');
+            $table->foreign('head_id')->references('id')->on('feetypes_fees');
+
         });
     }
 

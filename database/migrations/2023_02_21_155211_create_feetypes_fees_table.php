@@ -20,6 +20,9 @@ return new class extends Migration
             $table->integer('seq_id');
             $table->string('fee_type_ledger');
             $table->string('fee_headtype');
+            $table->foreign('br_id')->references('id')->on('branches_faculties');
+            $table->foreign('fee_collection_id')->references('id')->on('feecollectiontypes');
+            $table->foreign('fee_category')->references('id')->on('feecategory_feecategories');
          
             $table->timestamps();
         });

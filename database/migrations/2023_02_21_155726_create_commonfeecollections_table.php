@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('commonfeecollections', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('module_id');
-            $table->unsignedBigInteger('trans_id');
+            $table->bigInteger('trans_id');
             $table->string('admno');
             $table->string('rollno');
             $table->double('amount');
@@ -26,6 +26,8 @@ return new class extends Migration
             $table->date('paid_date');
             $table->boolean('inactive');
             $table->timestamps();
+            $table->foreign('br_id')->references('id')->on('branches_faculties');
+            $table->foreign('module_id')->references('id')->on('modules');
         });
     }
 

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('fee_category');
             $table->unsignedBigInteger('br_id');
-            $table->foreign('br_id')->references('br_id')->on('branches_faculties');
+            $table->foreign('br_id')->references('id')->on('branches_faculties');
             $table->timestamps();
         });
     }
