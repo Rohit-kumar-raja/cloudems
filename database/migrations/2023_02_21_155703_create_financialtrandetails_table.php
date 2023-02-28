@@ -23,7 +23,8 @@ return new class extends Migration
             $table->timestamps();
             $table->foreign('br_id')->references('id')->on('branches_faculties');
             $table->foreign('module_id')->references('id')->on('modules');
-            $table->foreign('head_id')->references('id')->on('feetypes_fees');
+            $table->foreign('head_id')->references('id')->on('feecollectiontypes');
+            $table->foreign('financialTranId')->references('id')->on('financialtrans');
 
         });
     }

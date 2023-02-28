@@ -28,6 +28,8 @@ return new class extends Migration
             $table->timestamps();
             $table->foreign('br_id')->references('id')->on('branches_faculties');
             $table->foreign('module_id')->references('id')->on('modules');
+            $table->unique(['admno']);
+
         });
     }
 
