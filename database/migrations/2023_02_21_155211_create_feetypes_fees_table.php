@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('br_id');
             $table->integer('seq_id');
             $table->string('fee_type_ledger');
-            $table->unsignedBigInteger('fee_headtype');
+            $table->unsignedBigInteger('fee_headtype')->nullable();
             $table->foreign('br_id')->references('id')->on('branches_faculties');
             $table->foreign('fee_collection_id')->references('id')->on('feecollectiontypes');
             $table->foreign('fee_category')->references('id')->on('feecategory_feecategories');
